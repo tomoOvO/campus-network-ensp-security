@@ -88,13 +88,13 @@
 
 | 序号 | 攻击类型 | 攻击手段 | 应急措施摘要 | 完整报告 |
 |------|---------|---------|-------------|---------|
-| 1 | **ARP 欺骗** | 伪造 ARP 响应，实施中间人攻击 | 绑定核心设备静态 ARP、开启 DAI 检测、划分 VLAN 缩小影响面 | [ARP欺骗应急预案](incident_response/arp_spoofing.md) |
-| 2 | **DHCP 饥饿攻击** | 伪造大量 DHCP 请求耗尽地址池 | 启用 DHCP Snooping + 端口安全，限制每个端口最大 MAC 数量 | [DHCP饥饿应急预案](incident_response/dhcp_starvation.md) |
-| 3 | **MAC 洪泛攻击** | 发送大量虚假 MAC 地址占满交换表 | 配置端口安全、Sticky MAC，超出阈值后 shutdown 或 restrict | [MAC洪泛应急预案](incident_response/mac_flooding.md) |
-| 4 | **SSH 暴力破解** | Hydra 对交换机 SSH 进行字典攻击 | 配置 VTY 线路 ACL 限制管理源 IP，设置登录失败锁定与延迟，改用密钥认证 | [SSH暴力破解应急预案](incident_response/ssh_brute_force.md) |
-| 5 | **TCP SYN 洪水攻击** | 利用半开连接消耗服务器资源 | 出口路由器配置限制 SYN 速率，服务器开启 SYN Cookie，部署防火墙阈值告警 | [SYN洪水应急预案](incident_response/syn_flood.md) |
-| 6 | **端口扫描** | Nmap 进行全端口与服务探测 | 关闭非必要服务，部署入侵检测规则，ACL 限制扫描源 IP | [端口扫描应急预案](incident_response/port_scan.md) |
-| 7 | **目录扫描** | Dirb/gobuster 暴破 Web 目录 | Web 服务器配置限制访问频率、隐藏版本信息，部署 WAF 规则 | [目录扫描应急预案](incident_response/directory_scan.md) |
+| 1 | **ARP 欺骗** | 伪造 ARP 响应，实施中间人攻击 | 绑定核心设备静态 ARP、开启 DAI 检测、划分 VLAN 缩小影响面 | [ARP欺骗应急预案](pentest/应急预案报告（arp欺骗操作）.docx) |
+| 2 | **DHCP 饥饿攻击** | 伪造大量 DHCP 请求耗尽地址池 | 启用 DHCP Snooping + 端口安全，限制每个端口最大 MAC 数量 | [DHCP饥饿应急预案](pentest/应急预案报告（dhcp饥饿攻击）.docx) |
+| 3 | **MAC 洪泛攻击** | 发送大量虚假 MAC 地址占满交换表 | 配置端口安全、Sticky MAC，超出阈值后 shutdown 或 restrict | [MAC洪泛应急预案](pentest/应急预案报告（mac洪泛攻击）.docx) |
+| 4 | **SSH 暴力破解** | Hydra 对交换机 SSH 进行字典攻击 | 配置 VTY 线路 ACL 限制管理源 IP，设置登录失败锁定与延迟，改用密钥认证 | [SSH暴力破解应急预案](pentest/应急预案报告（ssh暴力破解密码）.docx) |
+| 5 | **TCP SYN 洪水攻击** | 利用半开连接消耗服务器资源 | 出口路由器配置限制 SYN 速率，服务器开启 SYN Cookie，部署防火墙阈值告警 | [SYN洪水应急预案](pentest/应急预案报告（TCP SYN 洪水攻击）.docx) |
+| 6 | **端口扫描** | Nmap 进行全端口与服务探测 | 关闭非必要服务，部署入侵检测规则，ACL 限制扫描源 IP | [端口扫描应急预案](pentest/应急预案报告（端口扫描）.docx) |
+| 7 | **目录扫描** | Dirb/gobuster 暴破 Web 目录 | Web 服务器配置限制访问频率、隐藏版本信息，部署 WAF 规则 | [目录扫描应急预案](pentest/应急预案报告（扫描目录）.docx) |
 
 每份报告均包含：实验拓扑、攻击复现命令、Wireshark 抓包特征、应急处置流程、长期加固方案以及验证测试记录。
 
@@ -124,11 +124,5 @@
 - ✅ 编写 7 份标准化应急预案报告，覆盖二层、三层、应用层攻击
 - ✅ 输出全套可复现的实验文档、加固方案与应急预案
 
-## 📁 项目文件结构
-campus-network-ensp-security/
-├── topology/ # eNSP 拓扑文件与截图
-├── configs/ # 各设备完整配置命令
-├── pentest/ # 渗透测试报告与截图
-├── incident_response/ # 7 份应急预案报告
-├── images/ # 图片
-└── README.md
+## ⚠️ 免责声明
+本项目仅用于网络安全学习与模拟实验，所用攻击技术均在隔离实验环境下进行，未涉及任何真实系统。严禁利用本项目技术从事非法活动。
