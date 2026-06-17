@@ -92,7 +92,7 @@
 | 2 | **DHCP 饥饿攻击** | 伪造大量 DHCP 请求耗尽地址池 | 启用 DHCP Snooping + 端口安全，限制每个端口最大 MAC 数量 | [DHCP饥饿应急预案](pentest/应急预案报告（dhcp饥饿攻击）.docx) |
 | 3 | **MAC 洪泛攻击** | 发送大量虚假 MAC 地址占满交换表 | 配置端口安全、Sticky MAC，超出阈值后 shutdown 或 restrict | [MAC洪泛应急预案](pentest/应急预案报告（mac洪泛攻击）.docx) |
 | 4 | **SSH 暴力破解** | Hydra 对交换机 SSH 进行字典攻击 | 配置 VTY 线路 ACL 限制管理源 IP，设置登录失败锁定与延迟，改用密钥认证 | [SSH暴力破解应急预案](pentest/应急预案报告（ssh暴力破解密码）.docx) |
-| 5 | **TCP SYN 洪水攻击** | 利用半开连接消耗服务器资源 | 出口路由器配置限制 SYN 速率，服务器开启 SYN Cookie，部署防火墙阈值告警 | [SYN洪水应急预案](pentest/应急预案报告（TCP SYN 洪水攻击）.docx) |
+| 5 | **TCP SYN 洪水攻击** | 利用半开连接消耗服务器资源 | 出口路由器配置限制 SYN 速率，服务器开启 SYN Cookie，部署防火墙阈值告警 | [SYN洪水应急预案](pentest/应急预案报告（TCPSYN洪水攻击）.docx) |
 | 6 | **端口扫描** | Nmap 进行全端口与服务探测 | 关闭非必要服务，部署入侵检测规则，ACL 限制扫描源 IP | [端口扫描应急预案](pentest/应急预案报告（端口扫描）.docx) |
 | 7 | **目录扫描** | Dirb/gobuster 暴破 Web 目录 | Web 服务器配置限制访问频率、隐藏版本信息，部署 WAF 规则 | [目录扫描应急预案](pentest/应急预案报告（扫描目录）.docx) |
 
